@@ -1,0 +1,18 @@
+from endPoint.models import Employee
+from django.test import TestCase
+
+
+class Employee_Tests(TestCase):
+    def setUp(self):
+        Employee.objects.create(eid='first',
+                                ename='Abdullah',
+                                eemail='haaani@gmail.com',
+                                econtact='+923044587856')
+
+    def test_employee_name(self):
+        ename = Employee.objects.get(id=1).ename
+        self.assertEquals(ename, 'Abdullah')
+
+    def test_employee_email(self):
+        ename = Employee.objects.get(id=1).ename
+        self.assertEquals(ename, 'haaani@gmail.com')

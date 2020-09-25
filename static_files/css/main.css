@@ -1,0 +1,10 @@
+html, body {
+    padding: 0;
+    margin-top: 40px;
+    background-color: darkslateblue;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
