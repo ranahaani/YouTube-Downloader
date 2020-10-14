@@ -15,15 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from endPoint import views
 from ytdl import views
 
 urlpatterns = [
     path('', views.download_video),
-    # path('admin/', admin.site.urls),
-    # path('create', views.create),
-    # path('', views.index),
-    # path('employee/<int:id>', views.employee),
-    # path('update/<int:id>', views.update),
-    # path('delete/<int:id>', views.delete),
 ]
