@@ -23,5 +23,12 @@ $ pip install -r requirements.txt
 $ python manage.py runsever
 ```
 
+# DOCKER
+```sh
+$docker-compose up --build
+```
+The application will be available at : localhost:8000
+
+If you want to change the port, just change it in the ```docker-compose.yml``` fil
 # LICENSE
 MIT License
