@@ -1,10 +1,358 @@
 html, body {
     padding: 0;
-    margin-top: 40px;
-    background-color: #BB3017;
-    color: #ffffff;
+    margin: 0;
+    background-color: #f1f7fa;
+    color: black;
+}
+
+.background {
+    background: url("../img/background.svg");
+    background-size: cover;
+    padding-bottom: 200px
+}
+
+p {
+    margin: 0;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 5%;
+    font-family: 'CircularStd', sans-serif;
+}
+
+.content {
+    text-align: center;
+    padding-top: 3%;
+}
+
+.content > form > div > div > input {
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    border: 2px solid #960FF2;
+    color: #960FF2;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+}
+
+.content > form > input[type="submit"] {
+    background: #D6F227;
+    font-size: 18px;
+    font-family: 'Gotham Bold';
+    padding: 15px 20px;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 2%;
 }
 
 a {
-    color: #ffffff;
+    color: #960FF2;
 }
+
+.dbox {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    margin-top: 3%;
+}
+
+.v-title {
+    color: #960FF2;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'CircularStd', sans-serif;
+}
+
+.dbox > .img-thumb {
+    padding-right: 10px;
+}
+
+.dbox > .img-thumb > img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.dbox > .v-about {
+    padding-left: 10px;
+}
+
+.dbox > .v-about > .infos {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-top: 25px;
+}
+
+.dbox > .v-about > .infos > li {
+    list-style: none;
+    padding-right: 50px;
+    font-size: 18px;
+    font-family: 'CircularStd';
+    color: #480773;
+}
+
+.downloads {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 5%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'CircularStd';
+
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #D6F227;
+    color: black;
+}
+
+#m-show {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .dbox, .downloads {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .dbox > .img-thumb > img {
+        width: 100% !important;
+    }
+
+    #desl {
+        display: none;
+    }
+
+    #m-show {
+        display: block;
+    }
+}
+
+
+@font-face {
+    font-family: 'Gotham Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Book'), url('fonts/GothamBook.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Book Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Book Italic'), url('fonts/GothamBookItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Light'), url('fonts/GothamLight.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Light Italic'), url('fonts/GothamLightItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Medium'), url('fonts/GothamMedium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Medium'), url('fonts/GothamMedium_1.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Medium'), url('fonts/GothamMediumItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Bold'), url('fonts/GothamBold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Bold'), url('fonts/Gotham-Bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Bold Italic'), url('fonts/GothamBoldItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Black Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Black Regular'), url('fonts/Gotham-Black.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Light Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Light Regular'), url('fonts/Gotham-Light.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Thin Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Thin Regular'), url('fonts/Gotham-Thin.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham XLight Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham XLight Regular'), url('fonts/Gotham-XLight.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Book Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Book Italic'), url('fonts/Gotham-BookItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Thin Italic'), url('fonts/Gotham-ThinItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham Ultra Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Ultra Italic'), url('fonts/Gotham-UltraItalic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Gotham XLight Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham XLight Italic'), url('fonts/Gotham-XLightItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Black.eot');
+    src: url('fonts/CircularStd-Black.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-Black.woff') format('woff'), url('fonts/CircularStd-Black.ttf') format('truetype'), url('fonts/CircularStd-Black.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-BlackItalic.eot');
+    src: url('fonts/CircularStd-BlackItalic.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-BlackItalic.woff') format('woff'), url('fonts/CircularStd-BlackItalic.ttf') format('truetype'), url('fonts/CircularStd-BlackItalic.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Bold.eot');
+    src: url('fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-Bold.woff') format('woff'), url('fonts/CircularStd-Bold.ttf') format('truetype'), url('fonts/CircularStd-Bold.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-BoldItalic.eot');
+    src: url('fonts/CircularStd-BoldItalic.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-BoldItalic.woff') format('woff'), url('fonts/CircularStd-BoldItalic.ttf') format('truetype'), url('fonts/CircularStd-BoldItalic.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Medium.eot');
+    src: url('fonts/CircularStd-Medium.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-Medium.woff') format('woff'), url('fonts/CircularStd-Medium.ttf') format('truetype'), url('fonts/CircularStd-Medium.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-MediumItalic.eot');
+    src: url('fonts/CircularStd-MediumItalic.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-MediumItalic.woff') format('woff'), url('fonts/CircularStd-MediumItalic.ttf') format('truetype'), url('fonts/CircularStd-MediumItalic.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Book.eot');
+    src: url('fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-Book.woff') format('woff'), url('fonts/CircularStd-Book.ttf') format('truetype'), url('fonts/CircularStd-Book.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-BookItalic.eot');
+    src: url('fonts/CircularStd-BookItalic.eot?#iefix') format('embedded-opentype'), url('fonts/CircularStd-BookItalic.woff') format('woff'), url('fonts/CircularStd-BookItalic.ttf') format('truetype'), url('fonts/CircularStd-BookItalic.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
