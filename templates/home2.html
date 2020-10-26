@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 mb-5">
+            <h1 class="display-2 text-center" style="text-align: center!important;">YTV Downloader</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Download" class="btn btn-info btn-block">
+            </form>
+        </div>
+    </div>
+
+    {% if title %}
+        <div class="row">
+            <div class="col-md-6 ml-auto mr-auto mt-5">
+                <h1 class="h3 text-center">{{ title }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 ml-auto mr-auto mt-5">
+                <img class="img-responsive" src="{{ thumb }}">
+            </div>
+
+            <div class="col-md-4 ml-auto mr-auto mt-5 pt-5" >
+                <ul class="list-group list-group-flush"style="background-color: #a0463500">
+                    <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: black;"><p class="lead">Duration <i class="fa fa-clock-o"></i>: {{ duration }}</p></li>
+                    <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: #150571;"><p class="lead">Views <i class="fa fa-eye"></i>: {{ views }}</p></li>
+                    <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: #221e3a;"><p class="lead">Likes <i class="fa fa-thumbs-up"></i>: {{ likes }} Dislikes <i class="fa fa-thumbs-up"></i>: {{ dislikes }}</p></li>
+                    <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: transparent"><button class="btn btn-info mt-3" style="background-color: #4b55a0" data-toggle="collapse" data-target="#description">Description</button></li>
+                </ul>
+                <div id="description" class="collapse" >{{ description }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table mt-5">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Resolution</th>
+                        <th scope="col">File Size</th>
+                        <th scope="col">Extension</th>
+                        <th scope="col">Download</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for stream in streams %}
+                        <tr>
+                            <td>{{ stream.resolution }}</td>
+                            <td>{{ stream.file_size }}</td>
+                            <td>{{ stream.extension }}</td>
+                            <td><a href="{{ stream.video_url }}" style="text-decoration: none;" download="{{ title }}.{{ extension }}" target="_blank" >Download <i class=" fa fa-download"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+{#                <p class="h3 text-center mt-5 mb-5">Video Only</p>#}
+{#                <table class="table mt-5">#}
+{#                    <thead class="thead-light">#}
+{#                    <tr>#}
+{#                        <th scope="col">Resolution</th>#}
+{#                        <th scope="col">File Size</th>#}
+{#                        <th scope="col">Extension</th>#}
+{#                        <th scope="col">Download</th>#}
+{#                    </tr>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{#                    {% for stream in stream_video %}#}
+{#                        <tr>#}
+{#                            <td>{{ stream.resolution }}</td>#}
+{#                            <td>{{ stream.file_size }}</td>#}
+{#                            <td>{{ stream.extension }}</td>#}
+{#                            <td><a href="{{ stream.video_url }}" style="text-decoration: none;" download="{{ title }}.{{ extension }}" target="_blank">Download <i class=" fa fa-download"></i></a></td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{#                    </tbody>#}
+{#                </table>#}
+
+{#                <p class="h3 text-center mt-5 mb-5">Audio Only</p>#}
+{#                <table class="table mt-5 mb-5">#}
+{#                    <thead class="thead-light">#}
+{#                    <tr>#}
+{#                        <th scope="col">File Size</th>#}
+{#                        <th scope="col">Extension</th>#}
+{#                        <th scope="col">Download</th>#}
+{#                    </tr>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{#                    {% for stream in stream_audio %}#}
+{#                        <tr>#}
+{#                            <td>{{ stream.file_size }}</td>#}
+{#                            <td>{{ stream.extension }}</td>#}
+{#                            <td><a href="{{ stream.video_url }}" style="text-decoration: none;" download="{{ title }}.{{ extension }}" target="_blank" >Download <i class=" fa fa-download"></i></a></td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{#                    </tbody>#}
+{#                </table>#}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,10 +1,16 @@
 html, body {
     padding: 0;
-    margin-top: 40px;
-    background-color: #BB3017;
-    color: #ffffff;
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.title {
+    color: #960FF2;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 a {
-    color: #ffffff;
+    color: black;
 }
