@@ -29,6 +29,6 @@ $docker-compose up --build
 ```
 The application will be available at : localhost:8000
 
-If you want to change the port, just change it in the ```docker-compose.yml``` fil
+If you want to change the port, just change it in the ```docker-compose.yml``` file.
 # LICENSE
 MIT License
