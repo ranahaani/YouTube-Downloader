@@ -1,4 +1,4 @@
-#!/home/abdullah/PycharmProjects/djangoProject/venv/bin/python
+#!/home/abdullah/Desktop/hacktober/YouTube-Downloader/venv/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
