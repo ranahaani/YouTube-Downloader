@@ -1,16 +1,25 @@
 html, body {
     padding: 0;
     margin: 0;
-    background-color: #f1f7fa;
+    background-color: #caccf642;
     color: black;
 }
 
 .background {
-    background: url("../img/background.svg");
+    background: url("https://wallpaperaccess.com/download/dark-landscape-143729");
     background-size: cover;
     padding-bottom: 200px
 }
-
+.btn:hover
+{
+background:#654321;
+opacity:0.3;
+}
+a:hover
+{
+opacity:0.5;
+color: #654321;
+}
 p {
     margin: 0;
 }
