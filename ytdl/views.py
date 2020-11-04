@@ -19,10 +19,8 @@ def download_video(request):
             video_id = video_url.split('/')[-1]
             video_url = 'https://www.youtube.com/watch?v=' + video_id
 
-        if len(video_url.split("=")[-1]) != 11:
+        if len(video_url.split("=")[-1]) < 11:
             return HttpResponse('Enter correct url.')
-        # video_url = 'https://www.youtube.com/watch?v=ydg9KZCCPE0&ab_channel=Spatry%27sCupofLinux'
-        # video = pafy.new(video_url)
 
         ydl_opts = {}
 
