@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import youtube_dl
 from .forms import DownloadForm
+import re
 
 
 def download_video(request):
@@ -12,15 +13,18 @@ def download_video(request):
     form = DownloadForm(request.POST or None)
     if form.is_valid():
         video_url = form.cleaned_data.get("url")
-        if 'm.' in video_url:
-            video_url = video_url.replace(u'm.', u'')
-
-        elif 'youtu.be' in video_url:
-            video_id = video_url.split('/')[-1]
-            video_url = 'https://www.youtube.com/watch?v=' + video_id
-
-        if len(video_url.split("=")[-1]) < 11:
+        regex = (r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$\n")
+        if not re.match(regex, video_url):
             return HttpResponse('Enter correct url.')
+        # if 'm.' in video_url:
+        #     video_url = video_url.replace(u'm.', u'')
+
+        # elif 'youtu.be' in video_url:
+        #     video_id = video_url.split('/')[-1]
+        #     video_url = 'https://www.youtube.com/watch?v=' + video_id
+
+        # if len(video_url.split("=")[-1]) < 11:
+        #     return HttpResponse('Enter correct url.')
 
         ydl_opts = {}
 
