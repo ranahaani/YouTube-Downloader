@@ -28,7 +28,7 @@ Install the dependencies and devDependencies and start the server.
 $ git clone https://github.com/ranahaani/YouTube-Downloader.git
 $ cd Youtube-Downloader
 $ pip install -r requirements.txt
-$ python manage.py runsever
+$ python manage.py runserver
 ```
 
 # DOCKER
