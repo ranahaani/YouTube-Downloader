@@ -11,11 +11,16 @@ import re
 def download_video(request):
     global context
     form = DownloadForm(request.POST or None)
+    
     if form.is_valid():
         video_url = form.cleaned_data.get("url")
-        regex = (r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$\n")
-        if not re.match(regex, video_url):
+        regex = r'^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+'
+        #regex = (r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$\n")
+        print(video_url)
+        if not re.match(regex,video_url):
+            print('nhi hoa')
             return HttpResponse('Enter correct url.')
+
         # if 'm.' in video_url:
         #     video_url = video_url.replace(u'm.', u'')
 
@@ -55,5 +60,4 @@ def download_video(request):
             'duration': round(int(meta['duration'])/60, 2), 'views': f'{int(meta["view_count"]):,}'
         }
         return render(request, 'home.html', context)
-
     return render(request, 'home.html', {'form': form})
