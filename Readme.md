@@ -19,6 +19,7 @@ Youtube Downloader is a Python Web application built with Django.
 
 # REQUIREMENTS
   - This App Uses Python 3.7, Django 3.1.1, youtube-dl.
+  * If you face server error 500, just upgrade youtube-dl by ```pip install youtube-dl --upgrade```
 
 # INSTALLATION
 
